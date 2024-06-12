@@ -15,6 +15,7 @@ async function fetchCartItems() {
         cartItemsContainer.innerHTML = '';
         console.log(cartResponse);
 
+
         if (cartResponse.status || cartResponse.message) {
             cartItemsContainer.innerHTML = '<div style="text-align: center;"><p>Sem pedidos</p></div>';
         } else {

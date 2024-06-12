@@ -38,6 +38,7 @@ function buscarProdutosPadeiro() {
     })
     .then(data => {
         let produtos = data.data;
+        console.log(produtos)
         
         let alimentos = parseAlimentosRestritos(produtos[0].lS_ALIMENTOS_RESTRITOS_PADEIRO);
         document.getElementById("restricao").textContent = alimentos[0] || "";
@@ -94,6 +95,7 @@ function preencherProdutosNaPagina(produtos) {
         const botaoAdicionar = document.createElement('button');
         botaoAdicionar.classList.add('produtos_do_padeiro-btn-adicionar');
         botaoAdicionar.textContent = 'Adicionar no Carrinho';
+        botaoAdicionar.addEventListener("click", addItemToCart(produto.cD_PRODUTO))
 
         produtoInfo.appendChild(imagem);
         produtoInfo.appendChild(titulo);

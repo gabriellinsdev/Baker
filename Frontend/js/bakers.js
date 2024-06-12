@@ -2,10 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchPadeiros();
 
     document.querySelector('.btn-search').addEventListener('click', searchPadeiroByName);
-    document.querySelector('.produtos_do_padeiro-filtro-lactose').addEventListener('click', () => toggleFilter('Zero Lactose'));
-    document.querySelector('.produtos_do_padeiro-filtro-gluten').addEventListener('click', () => toggleFilter('Zero Gluten'));
-    document.querySelector('.produtos_do_padeiro-filtro-lowcarb').addEventListener('click', () => toggleFilter('Low-Carb'));
-    document.querySelector('.produtos_do_padeiro-filtro-artesanais').addEventListener('click', () => toggleFilter('Artesanal'));
 });
 
 let allPadeiros = [];
@@ -50,7 +46,7 @@ function populatePadeiroList(padeiros) {
             <div class="produtos_do_padeiro-conteudo-padeiro">
                 <h3>${nomePadeiro}</h3>
                 <p>${especialidadesText}</p>
-                <button onclick="viewPadeiroProducts('${padeiro.cD_USUARIO}')">Clique para ver os produtos desse padeiro</button>
+                <button onclick="redirectWithUserCode('${padeiro.cD_USUARIO}','${padeiro.nM_USUARIO}')">Clique para ver os produtos desse padeiro</button>
             </div>
         `;
 
@@ -83,15 +79,6 @@ function searchPadeiroByName() {
     populatePadeiroList(filteredPadeiros);
 }
 
-function toggleFilter(filter) {
-    if (currentFilter === filter) {
-        currentFilter = null;
-        populatePadeiroList(allPadeiros);
-    } else {
-        currentFilter = filter;
-        filterPadeiros(filter);
-    }
-}
 
 function filterPadeiros(filter) {
     const filteredPadeiros = allPadeiros.filter(padeiro => {
@@ -111,6 +98,16 @@ function parseEspecialidades(xmlString) {
         especialidades.push(especialidade);
     }
     return especialidades;
+}
+
+function redirectWithUserCode(CD_PADEIRO, NM_PADEIRO) {
+    sessionStorage.setItem('CD_PADEIRO', CD_PADEIRO);
+    sessionStorage.setItem('NM_PADEIRO', NM_PADEIRO);
+
+    var destinationUrl = 'http://127.0.0.1:5500/produtos-do-padeiro2.html';
+    
+    // Redirecionar para a nova URL
+    window.location.href = destinationUrl;
 }
 
 window.fetchPadeiros = fetchPadeiros;
