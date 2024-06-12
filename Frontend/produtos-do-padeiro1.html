@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>BAKER | Produtos do Padeiro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<!--NavBar-->
+<header>
+    <nav class="navbar-main">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="logo Baker">
+        </div>
+
+        <div class="navbar-lista-sites">
+            <ul>
+                <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Entrar</a></button>
+            <button onclick="redirectPage('carrinho.html')"><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+        </div>
+
+        <div class="navbar-btn-menu-sanduiche">
+            <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche" alt="menu sanduiche"></button>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile">
+        <ul>
+            <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+            <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+            <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+            <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+        </ul>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Login</a></button>
+            <button class="navbar-login"><a href="carrinho.html">Carrinho</a></button>
+        </div>
+    </div>
+</header>
+
+<nav class="produtos_do_padeiro-search-padeiro">
+
+    <section class="produtos_do_padeiro-busca">
+        <h4>Insira o nome do padeiro desejado ou filtre uma especialidade.</h4>
+        <div class="produtos_do_padeiro-barra-pesquisa-padeiro">
+            <form action="#" method="post">
+                <p>
+                    <input class="produtos_do_padeiro-form-padeiro" type="text" id="produtos_do_padeiro-search" name="buscar padeiro por nome" size="55" placeholder="Insira o nome de seu padeiro preferido">
+                </p>
+            </form>
+            <button type="submit" class="btn-search"><img src="img/search-white.png" class="btn-search-img"></button>
+        </div>
+    </section>
+
+    <section class="produtos_do_padeiro-especialidade">
+        <button class="produtos_do_padeiro-filtro-lactose">Zero Lactose</button>
+        <button class="produtos_do_padeiro-filtro-gluten">Zero Glúten</button>
+        <button class="produtos_do_padeiro-filtro-lowcarb">Low Carb</button>
+        <button class="produtos_do_padeiro-filtro-artesanais">Artesanais</button>
+    </section>
+</nav>
+
+<section class="produtos_do_padeiro-resultado">
+    <div class="produtos_do_padeiro-resultado-padeiro">
+        <img src="img/logo-padeiro.png" alt="logo do padeiro" class="produtos_do_padeiro-logo-padeiro"> 
+        <div class="produtos_do_padeiro-conteudo-padeiro">
+            <h3 id="padeiro1">Padeiro</h3>
+            <p id="restricao1">Artesanais</p>
+            <p id="restricaoExtra1">Zero Gluten</p>
+            <p id="restricaoExtra12">Zero Lactose</p>
+            <p id="restricaoExtra13">Low Carb</p>
+            <button id="button1" onclick="redirectWithUserCode(CD_PADEIRO1,NM_PADEIRO1)">Clique para ver os produtos desse padeiro</button>
+        </div>
+    </div>
+    <div class="produtos_do_padeiro-resultado-padeiro">
+        <img src="img/logo-padeiro.png" alt="logo do padeiro" class="produtos_do_padeiro-logo-padeiro"> 
+        <div class="produtos_do_padeiro-conteudo-padeiro">
+            <h3 id="padeiro2">Padeiro</h3>
+            <p id="restricao2">Artesanais</p>
+            <p id="restricaoExtra2">Zero Gluten</p>
+            <p id="restricaoExtra22">Zero Lactose</p>
+            <p id="restricaoExtra23">Low Carb</p>
+            <button id="button2" onclick="redirectWithUserCode(CD_PADEIRO2,NM_PADEIRO2)">Clique para ver os produtos desse padeiro</button>
+        </div>
+    </div>
+    <div class="produtos_do_padeiro-resultado-padeiro">
+        <img src="img/logo-padeiro.png" alt="logo do padeiro" class="produtos_do_padeiro-logo-padeiro"> 
+        <div class="produtos_do_padeiro-conteudo-padeiro">
+            <h3>Padeiro</h3>
+            <p>Artesanais</p>
+            <p>Zero Gluten</p>
+            <button><a href="produtos-do-padeiro2.html">Clique para ver os produtos desse padeiro</a></button>
+        </div>
+    </div>
+    <div class="produtos_do_padeiro-resultado-padeiro">
+        <img src="img/logo-padeiro.png" alt="logo do padeiro" class="produtos_do_padeiro-logo-padeiro"> 
+        <div class="produtos_do_padeiro-conteudo-padeiro">
+            <h3>Padeiro</h3>
+            <p>Artesanais</p>
+            <p>Zero Gluten</p>
+            <button><a href="produtos-do-padeiro2.html">Clique para ver os produtos desse padeiro</a></button>
+        </div>
+    </div>
+    <div class="produtos_do_padeiro-resultado-padeiro">
+        <img src="img/logo-padeiro.png" alt="logo do padeiro" class="produtos_do_padeiro-logo-padeiro"> 
+        <div class="produtos_do_padeiro-conteudo-padeiro">
+            <h3>Padeiro</h3>
+            <p>Artesanais</p>
+            <p>Zero Gluten</p>
+            <button><a href="produtos-do-padeiro2.html">Clique para ver os produtos desse padeiro</a></button>
+        </div>
+    </div>
+    <div class="produtos_do_padeiro-resultado-padeiro">
+        <img src="img/logo-padeiro.png" alt="logo do padeiro" class="produtos_do_padeiro-logo-padeiro"> 
+        <div class="produtos_do_padeiro-conteudo-padeiro">
+            <h3>Padeiro</h3>
+            <p>Artesanais</p>
+            <p>Zero Gluten</p>
+            <button><a href="produtos-do-padeiro2.html">Clique para ver os produtos desse padeiro</a></button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h6>Todos os direitos reservados</h6>
+</footer>
+    
+    <script type="text/javascript" src='js/main.js'></script>
+    <script src="js/auth.js"></script>
+    <script src="js/bakers.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>BAKER | Configurações - Gerenciar Produtos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<!--NavBar-->
+<header>
+    <nav class="navbar-main">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="logo Baker">
+        </div>
+
+        <div class="navbar-lista-sites">
+            <ul>
+                <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Entrar</a></button>
+            <button onclick="redirectPage('carrinho.html')"><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+        </div>
+
+        <div class="navbar-btn-menu-sanduiche">
+            <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche" alt="menu sanduiche"></button>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile">
+        <ul>
+            <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+            <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+            <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+            <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+        </ul>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Login</a></button>
+            <button class="navbar-login"><a href="carrinho.html">Carrinho</a></button>
+        </div>
+    </div>
+</header>
+
+<section class="carrinho-main">
+    <section class="carrinho-produtos">
+        <div class="carrinho-titulo">
+            <h3>Carrinho</h3>
+        </div>
+        <div id="cart-items">
+
+        </div>
+    
+       <!-- <section class="carrinho-produto-adicionado">
+            <div class="carrinho-img-produto">
+                <img src="img/pao3.png" alt="algum pao" class="img-carrinho">
+            </div>
+            <div class="carrinho-info-produtos">
+                <h4>Rosquinha</h4>
+                <p>Zero Glúten</p>
+                <p>Artesanal</p>
+                <p>R$ 00,00</p>
+            </div>
+            <div class="carrinho-btns">
+                <div class="carrinho-adc-exc">
+                    <button class="carrinho-btn-controle">-</button>
+                    <button class="carrinho-btn-controle">0</button>
+                    <button class="carrinho-btn-controle">+</button>
+                </div>
+                <button class="carrinho-excluir-produto">Remover</button> 
+            </div>         
+       </section>
+       <div class="line"></div>
+       <section class="carrinho-produto-adicionado">
+            <div class="carrinho-img-produto">
+                <img src="img/pao8.png" alt="algum pao" class="img-carrinho">
+            </div>
+            <div class="carrinho-info-produtos">
+                <h4>Pão de Forma</h4>
+                <p>Zero Glúten</p>
+                <p>Artesanal</p>
+                <p>R$ 00,00</p>
+            </div>
+            <div class="carrinho-btns">
+                <div class="carrinho-adc-exc">
+                    <button class="carrinho-btn-controle">-</button>
+                    <button class="carrinho-btn-controle">0</button>
+                    <button class="carrinho-btn-controle">+</button>
+                </div>
+                <button class="carrinho-excluir-produto">Remover</button> 
+            </div>         
+        </section> -->
+    </section>
+    <section class="carrinho-resumo-pedido">
+        <h3>Resumo do Pedido</h3>
+        <div class="carrinho-resumo-pedido-informacoes">
+            <div class="carrinho-total">
+                <p>Subtotal</p>
+                <p>Frete</p>
+                <h4>Total</h4>
+            </div>
+            <div class="carrinho-preco">
+                <p id="subtotal">R$ 00,00</p>
+                <p id="frete">R$ 00,00</p>
+                <h4 id="total">R$ 00,00</h4>
+            </div>
+        </div>
+        <button class="carrinho-btn-finalizar-pedido">Finalizar Pedido</button>
+    </section>
+</section>
+
+
+<footer>
+    <h6>Todos os direitos reservados</h6>
+</footer>
+    
+    <script type="text/javascript" src='js/main.js'></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchCartItems(); // Função para buscar e exibir os itens do carrinho
+        });
+    </script>
+</body>
+</html>

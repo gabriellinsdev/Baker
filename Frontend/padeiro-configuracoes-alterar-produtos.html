@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>BAKER | Configurações - Alterar Produto</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<!--NavBar-->
+<header>
+    <nav class="navbar-main">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="logo Baker">
+        </div>
+
+        <div class="navbar-lista-sites">
+            <ul>
+                <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-btns">
+            <button class="navbar-login"><a href="#">Entrar</a></button>
+            <button><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+        </div>
+
+        <div class="navbar-btn-menu-sanduiche">
+            <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche" alt="menu sanduiche"></button>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile">
+        <ul>
+            <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Home</a></li>
+            <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Padeiros Próximos</a></li>
+            <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Padeiro Ideal</a></li>
+            <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+        </ul>
+
+        <div class="navbar-btns">
+            <button class="navbar-login"><a href="#">Login</a></button>
+            <button class="navbar-login"><a href="#">Carrinho</a></button>
+        </div>
+    </div>
+</header>
+
+<section class="conf-usuario">
+    <section class="conf-padeiro-links">
+        <div class="conf-avatar">
+            <img src="img/avatar.png" alt="icone perfil avatar">
+            <div class="conf-avatar-info">
+                <h3>Nome Padeiro</h3>
+                <button>Sair</button>
+            </div>
+        </div>
+        <nav class="conf-usuario-nav">
+            <ul>
+                <li class="conf-link-icon">
+                    <img src="img/usuario.png" alt="icone de usuario">
+                    <a href="usuario-configuracoes-alterar.html" class="">Minha Conta</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/historico-pedido.png" alt="icone de usuario">
+                    <a href="usuario-configuracoes-historico.html" class="">Meus Pedidos</a>
+                </li>
+                <!-- <li class="conf-link-icon">
+                    <img src="img/cadastrar-produto.png" alt="icone de usuario">
+                    <a href="padeiro-configuracoes-gerenciar-produtos.html" class="">Gerenciar Produtos</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/vendas.png" alt="icone de usuario">
+                    <a href="padeiro-configuracoes-vendas.html" class="">Minhas Vendas</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/dashboard.png" alt="icone de usuario">
+                    <a href="padeiro-configuracoes-dashboard.html" class="">Dashboard</a>
+                </li> -->
+            </ul>
+        </nav>
+    </section>
+    <section class="conf-padeiro-cadastrar-produto-main">
+        <div class="conf-padeiro-cadastro-header">
+            <button class="btn-conf-padeiro-cadastro"><a href="padeiro-configuracoes-gerenciar-produtos.html"><img src="img/voltar.png" alt="botao voltar"></a></button>
+            <h3>Alterar Produto</h3>
+        </div>
+        
+        <div class="conf-padeiro-cadastrar-formulario">
+            <form onsubmit="return false;">
+                <label for="produto-nome">Nome do Produto</label><br>
+                <input type="text" id="nome-do-produto" name="nome-produto" class="conf-padeiro-form-cadastrar"><br><br>
+
+                <label for="produto-preco">Preço do Produto</label><br>
+                <input type="text" id="preco-do-produto" name="preco-produto" class="conf-padeiro-form-cadastrar"><br><br>
+
+                <label for="produto-preco">Especificação do Produto</label><br>
+                
+                <input type="checkbox" id="zeroGluten" name="categoria" value="1">
+                <label for="zeroGluten">Zero Gluten</label><br>
+                    
+                <input type="checkbox" id="zeroLactose" name="categoria" value="2">
+                <label for="zeroLactose">Zero Lactose</label><br>
+            
+                <input type="checkbox" id="lowCarb" name="categoria" value="3">
+                <label for="lowCarb">Low Carb</label><br>
+                    
+                <input type="checkbox" id="artesanal" name="categoria" value="4">
+                <label for="artesanal">Artesanal</label><br><br>
+
+                <input type="file" id="produto-imagem" name="produto-imagem" accept="image/*"><br><br>
+                
+                <button onclick="alterarProdutoPadeiro()" class="conf-padeiro-btncadastrar-produto-form">Alterar Produto</button>
+            </form>
+        </div>
+       
+    </section>
+</section>
+
+
+
+<footer>
+    <h6>Todos os direitos reservados</h6>
+</footer>
+    
+    <script type="text/javascript" src='js/main.js'></script>
+    <script type="text/javascript" src='js/auth.js'></script>
+    <script type="text/javascript" src='js/alterar-produtos.js'></script>
+    
+</body>
+</html>

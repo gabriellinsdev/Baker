@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>BAKER | Configurações - Alterar Dados</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<!--NavBar-->
+<header>
+    <nav class="navbar-main">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="logo Baker">
+        </div>
+
+        <div class="navbar-lista-sites">
+            <ul>
+                <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Entrar</a></button>
+            <button onclick="redirectPage('carrinho.html')"><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+        </div>
+
+        <div class="navbar-btn-menu-sanduiche">
+            <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche" alt="menu sanduiche"></button>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile">
+        <ul>
+            <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+            <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+            <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+            <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+        </ul>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Login</a></button>
+            <button class="navbar-login"><a href="carrinho.html">Carrinho</a></button>
+        </div>
+    </div>
+</header>
+
+<section class="conf-usuario">
+    <section class="conf-padeiro-links">
+        <div class="conf-avatar">
+            <img src="img/avatar.png" alt="icone perfil avatar">
+            <div class="conf-avatar-info">
+                <h3>Nome Padeiro</h3>
+                <button onclick="logout()">Sair</button>
+            </div>
+        </div>
+        <nav class="conf-usuario-nav">
+            <ul>
+                <li class="conf-link-icon">
+                    <img src="img/usuario.png" alt="icone de usuario">
+                    <a href="padeiro-configuracoes-alterar.html" class="">Minha Conta</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/historico-pedido.png" alt="icone de usuario">
+                    <a href="padeiro-configuracoes-historico.html" class="">Meus Pedidos</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/cadastrar-produto.png" alt="icone de usuario">
+                    <a href="padeiro-configuracoes-gerenciar-produtos.html" class="">Gerenciar Produtos</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/vendas.png" alt="icone de usuario">
+                    <a href="padeiro-configuracoes-vendas.html" class="">Minhas Vendas</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/dashboard.png" alt="icone de usuario">
+                    <a href="padeiro-configuracoes-dashboard.html" class="">Dashboard</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <section class="conf-usuario-info">
+        <h3>Informações</h3>
+        <div class="conf-alterar">
+            <h5>Alterar Senha</h5>
+            <form action="#" method="post">
+                <p>
+                    <input class="conf-form-alterar" type="text" id="conf-alterar-senha-atual" name="alterar senha" size="35" placeholder="Insira sua senha atual">
+                </p>
+            </form>
+            <form action="#" method="post">
+                <p>
+                    <input class="conf-form-alterar" type="text" id="conf-alterar-senha-nova" name="alterar senha" size="35" placeholder="Insira sua senha nova">
+                </p>
+            </form>
+            <button class="btn-conf-alterar">Alterar Senha</button>
+        </div>
+
+        <div class="conf-alterar">
+            <h5>Alterar E-mail</h5>
+            <form action="#" method="post">
+                <p>
+                    <input class="conf-form-alterar" type="text" id="conf-alterar-email-atual" name="alterar email" size="35" placeholder="Insira seu e-mail atual">
+                </p>
+            </form>
+            <form action="#" method="post">
+                <p>
+                    <input class="conf-form-alterar" type="text" id="conf-alterar-email-novo" name="alterar email" size="35" placeholder="Insira seu e-mail novo">
+                </p>
+            </form>
+            <button class="btn-conf-alterar">Alterar Senha</button>
+        </div>
+    </section>
+    <section class="conf-usuario-endereco">
+        <h3>Endereço Atual</h3>
+        <div class="conf-usuario-endereco-escrito">
+            <p>
+                Endereço: Rua das Flores.
+                Nº 345.
+                Complemento: APTO 23.
+                Bairro: Orquídeas.
+                Cidade: Olímpia.
+                Estado: São Paulo.
+                País: Brasil.
+            </p>
+        </div>
+        <div class="conf-alterar-address">
+            <h5>Alterar Endereço</h5>
+            <form action="#" method="post">
+                <p>
+                    <input class="conf-form-alterar" type="text" id="conf-alterar-cep" name="alterar cep" size="35" placeholder="Insira seu novo CEP">
+                </p>
+            </form>
+            <form action="#" method="post">
+                <p>
+                    <input class="conf-form-alterar" type="text" id="conf-alterar-numero" name="alterar numero" size="35" placeholder="Insira seu novo numero">
+                </p>
+            </form>
+            <form action="#" method="post">
+                <p>
+                    <input class="conf-form-alterar" type="text" id="conf-alterar-complemento" name="alterar complemento" size="35" placeholder="Insira seu novo complemento">
+                </p>
+            </form>
+            <button class="btn-conf-alterar">Alterar Endereço</button>
+        </div>
+        
+    </section>
+</section>
+
+<footer>
+    <h6>Todos os direitos reservados</h6>
+</footer>
+    
+    <script src='js/main.js'></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            ensureAuthenticated();
+            updateAuthUI();
+
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>BAKER | Configurações - Alterar Dados</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<!--NavBar-->
+<header>
+    <nav class="navbar-main">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="logo Baker">
+        </div>
+
+        <div class="navbar-lista-sites">
+            <ul>
+                <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Entrar</a></button>
+            <button onclick="redirectPage('carrinho.html')"><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+        </div>
+
+        <div class="navbar-btn-menu-sanduiche">
+            <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche" alt="menu sanduiche"></button>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile">
+        <ul>
+            <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+            <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+            <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+            <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+        </ul>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Login</a></button>
+            <button class="navbar-login"><a href="carrinho.html">Carrinho</a></button>
+        </div>
+    </div>
+</header>
+
+<section class="conf-usuario">
+    <section class="conf-usuario-links">
+        <div class="conf-avatar">
+            <img src="img/avatar.png" alt="icone perfil avatar">
+            <div class="conf-avatar-info">
+                <h3>Nome Usuário</h3>
+                <button onclick="logout()">Sair</button>
+            </div>
+        </div>
+        <nav class="conf-usuario-nav">
+            <ul>
+                <li class="conf-link-icon">
+                    <img src="img/usuario.png" alt="icone de usuario">
+                    <a href="usuario-configuracoes-alterar.html" class="">Minha Conta</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/historico-pedido.png" alt="icone de usuario">
+                    <a href="usuario-configuracoes-historico.html" class="">Meus Pedidos</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <section class="conf-usuario-info">
+        <h3>Informações</h3>
+        <div class="conf-alterar">
+            <h5>Alterar Senha</h5>
+            <form id="form-alterar-senha">               
+                <input required class="conf-form-alterar" type="password" id="conf-alterar-senha-atual" name="alterar senha" size="35" placeholder="Insira sua senha atual">
+                <input required class="conf-form-alterar" type="password" id="conf-alterar-senha-nova" name="alterar senha" size="35" placeholder="Insira sua senha nova">                
+                <button type="submit" class="btn-conf-alterar">Alterar Senha</button>
+            </form>
+        </div>
+
+        <div class="conf-alterar">
+            <h5>Alterar E-mail</h5>
+            <form id="form-alterar-email">              
+                <input required class="conf-form-alterar" type="password" id="conf-alterar-email-novo-senha" name="conf-alterar-email-novo-senha" size="35" placeholder="Insira sua senha">                              
+                <input required class="conf-form-alterar" type="text" id="conf-alterar-email-novo" name="alterar email" size="35" placeholder="Insira seu e-mail novo">     
+                <button type="submit" class="btn-conf-alterar">Alterar Email</button>
+            </form>
+        </div>
+    </section>
+    <section class="conf-usuario-endereco">
+        <h3>Endereço Atual</h3>
+        <div class="conf-usuario-endereco-escrito">
+            <p>
+                Endereço: Rua das Flores.
+                Nº 345.
+                Complemento: APTO 23.
+                Bairro: Orquídeas.
+                Cidade: Olímpia.
+                Estado: São Paulo.
+                País: Brasil.
+            </p>
+        </div>
+        <div class="conf-alterar-address">
+            <h5>Alterar Endereço</h5>
+            <form id="form-alterar-endereco">    
+                <input required class="conf-form-alterar" type="password" id="conf-alterar-endereco-senha" name="alterar senha" size="35" placeholder="Insira sua senha">               
+                <input required class="conf-form-alterar" type="text" id="conf-alterar-cep" name="alterar cep" size="35" placeholder="Insira seu novo CEP">               
+                <input required class="conf-form-alterar" type="text" id="conf-alterar-numero" name="alterar endereco" size="35" placeholder="Insira seu novo endereço">              
+                <input required class="conf-form-alterar" type="text" id="conf-alterar-cidade" name="alterar cidade" size="35" placeholder="Insira seu novo cidade">              
+                <input required class="conf-form-alterar" type="text" id="conf-alterar-estado" name="alterar estado" size="35" placeholder="Insira seu novo estado">              
+                <button type="submit" class="btn-conf-alterar">Alterar Endereço</button>
+            </form>
+        </div>
+        
+    </section>
+</section>
+
+<footer>
+    <h6>Todos os direitos reservados</h6>
+</footer>
+    
+    <script type="text/javascript" src='js/main.js'></script>
+    <script src="js/auth.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    setupUserForms();
+});
+
+function setupUserForms() {
+    const formAlterarSenha = document.getElementById('form-alterar-senha');
+    const formAlterarEmail = document.getElementById('form-alterar-email');
+    const formAlterarEndereco = document.getElementById('form-alterar-endereco');
+
+    if (formAlterarSenha) {
+        formAlterarSenha.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const senhaAtual = document.getElementById('conf-alterar-senha-atual').value;
+            const senhaNova = document.getElementById('conf-alterar-senha-nova').value.trim();
+            if(senhaNova == null || senhaNova == "") {
+                formAlterarSenha.reset()
+            }
+            else {
+                const data = {
+                    senhaAntiga: senhaAtual,
+                    senhaNova: senhaNova
+                };
+    
+                updateUserData(data).then(response => {
+                    console.log('Senha alterada com sucesso:', response);
+                    alert('Senha alterada com sucesso');
+                    
+                }).catch(error => {
+                    console.error('Erro ao alterar senha:', error);
+                    if (error.errors) {
+                        console.error('Erros de validação:', error.errors);
+                        alert('Erro ao alterar senha: ' + JSON.stringify(error.errors));
+                        
+                    } else {
+                        alert('Erro ao alterar senha');
+                    }
+                });
+                formAlterarSenha.reset()
+            }
+        });
+    }
+
+    if (formAlterarEmail) {
+        formAlterarEmail.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailNovo = document.getElementById('conf-alterar-email-novo').value;
+            const senhaAntiga = document.getElementById('conf-alterar-email-novo-senha').value;
+            const data = {
+                senhaAntiga: senhaAntiga,
+                email: emailNovo
+            };
+            updateUserData(data).then(response => {
+                console.log('Email alterado com sucesso:', response);
+                alert('Email alterado com sucesso');
+            }).catch(error => {
+                console.error('Erro ao alterar email:', error);
+                if (error.errors) {
+                    console.error('Erros de validação:', error.errors);
+                    alert('Erro ao alterar email: ' + JSON.stringify(error.errors));
+                } else {
+                    alert('Erro ao alterar email');
+                }
+            });
+            formAlterarEmail.reset()
+        });
+    }
+
+    if (formAlterarEndereco) {
+        formAlterarEndereco.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const senhaAntiga = document.getElementById('conf-alterar-endereco-senha').value;
+            const cep = document.getElementById('conf-alterar-cep').value;
+            const endereco = document.getElementById('conf-alterar-numero').value;
+            const cidade = document.getElementById('conf-alterar-cidade').value;
+            const estado = document.getElementById('conf-alterar-estado').value;
+
+            const data = {
+                senhaAntiga: senhaAntiga,
+                cep: cep,
+                endereco: endereco,
+                cidade: cidade,
+                estado: estado,
+            };
+            updateUserData(data).then(response => {
+                console.log('Endereço alterado com sucesso:', response);
+                alert('Endereço alterado com sucesso');
+            }).catch(error => {
+                console.error('Erro ao alterar endereço:', error);
+                if (error.errors) {
+                    console.error('Erros de validação:', error.errors);
+                    alert('Erro ao alterar endereço: ' + JSON.stringify(error.errors));
+                } else {
+                    alert('Erro ao alterar endereço');
+                }
+            });
+            formAlterarEndereco.reset()
+        });
+    }
+}
+    </script>
+</body>
+</html>

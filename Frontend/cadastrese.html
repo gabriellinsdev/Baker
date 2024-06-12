@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>BAKER | Cadastre-se</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<section class="cadastrese-main-form">
+    <div class="cadastrese-header">
+        <button class="btn-cadastrese-voltar"><a href="index.html"><img src="img/voltar.png" alt="botao voltar"></a></button>
+        <h3>Cadastre-se</h3>
+    </div>
+    
+    <div class="cadastrese-formulario">
+        <form>
+            <label for="cadastrese-name">Nome</label><br>
+            <input type="text" id="cadastrese-nome" name="cadastrese-name" class="cadastrese-form"><br>
+    
+            <label for="cadastrese-e-mail">E-mail</label><br>
+            <input type="text" id="cadastrese-email" name="cadastrese-e-mail" class="cadastrese-form"><br>
+
+            <label for="cadastrese-number">Telefone</label><br>
+            <input type="number" id="cadastrese-telefone" name="cadastrese-number" class="cadastrese-form"><br>
+
+            <label for="cadastrese-caixapostal">CEP</label><br>
+            <input type="number" id="cadastrese-cep" name="cadastrese-caixapostal" class="cadastrese-form"><br>
+
+            <label for="cadastrese-stado">Estado</label><br>
+            <input type="text" id="cadastrese-estado" name="cadastrese-stado" class="cadastrese-form"><br>
+
+            <label for="cadastrese-address">Endereço</label><br>
+            <input type="text" id="cadastrese-endereco" name="cadastrese-address" class="cadastrese-form"><br>
+
+            <label for="cadastrese-city">Cidade</label><br>
+            <input type="text" id="cadastrese-cidade" name="cadastrese-city" class="cadastrese-form"><br>
+
+            <label for="cadastrese-password">Senha</label><br>
+            <input type="password" id="cadastrese-senha" name="cadastrese-password" class="cadastrese-form"><br>
+
+            <label for="cadastrese-password">Repita sua Senha</label><br>
+            <input type="password" id="cadastrese-senhaC" name="cadastrese-password" class="cadastrese-form"><br>
+            
+            <div class="cadastrese-cpf-cnpj">
+                <p>Se você for um <b>Padeiro</b>, insira o seu <b>CNPJ</b></p>
+                <p class="cadastrese-bottom">Se for um <b>Comprador de Pão</b>, insira o seu <b>CPF</b></p>
+                <label for="cadastrese-cnpj">CPNJ</label><br>
+                <input type="number" id="cadastrese-cnpj" name="cadastrese-cnpj" class="cadastrese-form"><br>
+                <label for="cadastrese-cpf">CPF</label><br>
+                <input type="number" id="cadastrese-cpf" name="cadastrese-cpf" class="cadastrese-form"><br>
+            </div>
+    
+            <button type="submit" class="btn-cadastrese">Entrar</button>
+        </form>
+
+    </div>
+</section>
+    
+<script type="text/javascript" src='js/main.js'></script>
+<script src="js/auth.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setupRegisterForm();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Home</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<!--NavBar-->
+<header>
+    <nav class="navbar-main">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="logo Baker">
+        </div>
+
+        <div class="navbar-lista-sites">
+            <ul>
+                <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Entrar</a></button>
+            <button onclick="redirectPage('carrinho.html')"><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+        </div>
+
+        <div class="navbar-btn-menu-sanduiche">
+            <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche" alt="menu sanduiche"></button>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile">
+        <ul>
+            <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+            <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+            <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+            <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+        </ul>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Login</a></button>
+            <button class="navbar-login"><a href="carrinho.html">Carrinho</a></button>
+        </div>
+    </div>
+</header>
+
+<!-- Descrição do Site -->
+<main class="home-introducao">
+    <img src="img/paofundo2.jpg" class="home-imagem-fundo">
+        <div class="home-sobreposicao">
+            <h1>PÃES ARTESANAIS SAUDÁVEIS</h1>
+            <p>Descubra o Baker, onde você encontra pães artesanais feitos por pequenos empresários comprometidos com a saúde e o sabor. Ideal para quem busca uma alimentação equilibrada e deliciosa no dia a dia. Apoie os padeiros locais e transforme suas refeições!</p>
+        </div>
+</main>
+
+<!-- Especialidades disponíveis -->
+<section class="home-especialidades-cards">
+    <div class="card1">
+        <img src="img/icone-pao-yellow.png" alt="icone de pão" class="home-img-card">
+        <h2>Artesanais</h2>
+        <p>Pães e doces feitos artesanalmente com amor e qualidade</p>
+    </div>
+    <div class="card2">
+        <img src="img/zerogluten-yellow.png" alt="icone de pão" class="home-img-card">
+        <h2>Zero Glúten</h2>
+        <p>Delícias sem glúten, ideais para intolerantes e celíacos</p>
+    </div>
+    <div class="card3">
+        <img src="img/zerolac-yellow.png" alt="icone de pão" class="home-img-card">
+        <h2>Zero Lactose</h2>
+        <p>Sabores deliciosos sem lactose, perfeitos para sua dieta</p>
+    </div>
+    <div class="card4">
+        <img src="img/lowcarb-yellow.png" alt="icone de pão" class="home-img-card">
+        <h2>Low Carb</h2>
+        <p>Opções low carb para sua dieta saudável e equilibrada</p>
+    </div>
+</section>
+
+<!-- Links para os Serviços -->
+<div class="home-servicos-titulo">
+    <img src="img/pao-png.png" alt="desenho linhado de um pão" class="home-img-minipao">
+    <h2>ENCONTRE O SEU PÃO IDEAL!</h2>
+    <img src="img/pao-png.png" alt="desenho linhado de um pão" class="home-img-minipao">   
+</div>
+
+<section class="home-servicos">
+    <section class="home-localizar-padeiro">
+        <img src="img/mapa2.png" class="home-img-servicos" alt="desenho de um mapa">
+        <h2>Localize Padeiros pelo seu CEP</h2>
+        <p>Encontre padeiros artesanais perto de você! Digite seu CEP e descubra delícias saudáveis e fresquinhas preparadas com amor e ingredientes de qualidade</p>
+    </section>
+    <section class="home-indicar-padeiro">
+        <img src="img/padeiro.png" class="home-img-servicos" alt="desenho de um mapa">
+        <h2>Dê um Match com seu Padeiro Ideal</h2>
+        <p>Conecte-se com padeiros que entendem suas necessidades. Escolha o perfil perfeito e desfrute de produtos artesanais deliciosos, feitos especialmente para você</p>
+    </section>
+</section>
+
+    <!-- Galeria de Produtos -->
+    <nav class="galeria">
+        <h2 class="home-galeria-titulo" id="padeiroFulano">Padeiro Fulano de Tal</h2>
+        <button class="nxt-btn"><img src="img/arrow-rigth.png" alt="seta para esquerda"></button>
+        <button class="pre-btn"><img src="img/arrow-left.png" alt="seta para direita"></button>  
+        <div class="home-galeria" id="product-gallery">
+            <!-- <div class="home-card-produtos">
+                <div class="home-produtos">
+                    <img src="img/pao1.png" class="home-imagem-produto" alt="imagem de um pão de leite">
+                    <div class="home-titulo">
+                        <h3 class="home-titulo-pao">Pão de Leite</h3>
+                        <h3 class="home-titulo-preco">R$ 2,50</h3>
+                    </div>
+                    <div class="home-filtros">
+                        <p class="home-filtro-pao">Caseiro</p>
+                        <p class="home-filtro-pao">Artesanal</p>
+                    </div>
+                    <button class="home-btn-adicionar">Adicionar no Carrinho</button>
+                </div>
+            </div>
+            <div class="home-card-produtos">
+                <div class="home-produtos">
+                    <img src="img/pao2.png" class="home-imagem-produto" alt="imagem de pão"> 
+                    <div class="home-titulo">
+                        <h3 class="home-titulo-pao">Pão Integral</h3>
+                        <h3 class="home-titulo-preco">R$ 12,50</h3>
+                    </div>
+                    <div class="home-filtros">
+                        <p class="home-filtro-pao">Integral</p>
+                        <p class="home-filtro-pao">Artesanal</p>
+                    </div>
+                    <button class="home-btn-adicionar">Adicionar no Carrinho</button>
+                </div>
+            </div>
+            <div class="home-card-produtos">
+                <div class="home-produtos">
+                    <img src="img/pao3.png" class="home-imagem-produto" alt="imagem de pão"> 
+                    <div class="home-titulo">
+                        <h3 class="home-titulo-pao">Rosquinha</h3>
+                        <h3 class="home-titulo-preco">R$ 6,50</h3>
+                    </div>
+                    <div class="home-filtros">
+                        <p class="home-filtro-pao">Caseiro</p>
+                        <p class="home-filtro-pao">Artesanal</p>
+                    </div>
+                    <button class="home-btn-adicionar">Adicionar no Carrinho</button>
+                </div>
+            </div>
+            <div class="home-card-produtos">
+                <div class="home-produtos">
+                    <img src="img/pao4.png" class="home-imagem-produto" alt="imagem de pão"> 
+                    <div class="home-titulo">
+                        <h3 class="home-titulo-pao">Brioche</h3>
+                        <h3 class="home-titulo-preco">R$ 15,50</h3>
+                    </div>
+                    <div class="home-filtros">
+                        <p class="home-filtro-pao">Caseiro</p>
+                        <p class="home-filtro-pao">Artesanal</p>
+                    </div>
+                    <button class="home-btn-adicionar">Adicionar no Carrinho</button>
+                </div>
+            </div>
+            <div class="home-card-produtos">
+                <div class="home-produtos">
+                    <img src="img/pao5.png" class="home-imagem-produto" alt="imagem de pão"> 
+                    <div class="home-titulo">
+                        <h3 class="home-titulo-pao">Pão Francês</h3>
+                        <h3 class="home-titulo-preco" >R$ 0,50</h3>
+                    </div>
+                    <div class="home-filtros">
+                        <p class="home-filtro-pao">Caseiro</p>
+                        <p class="home-filtro-pao">Artesanal</p>
+                    </div>
+                    <button class="home-btn-adicionar" data-preco='0.5' data-codigoproduto="1">Adicionar no Carrinho</button>
+                </div>
+            </div>
+            <div class="home-card-produtos">
+                <div class="home-produtos">
+                    <img src="img/pao6.png" class="home-imagem-produto" alt="imagem de pão"> 
+                    <div class="home-titulo">
+                        <h3 class="home-titulo-pao">Pão Italiano</h3>
+                        <h3 class="home-titulo-preco" >R$ 0,50</h3>
+                    </div>
+                    <div class="home-filtros">
+                        <p class="home-filtro-pao">Natural</p>
+                        <p class="home-filtro-pao">Artesanal</p>
+                    </div>
+                    <button class="home-btn-adicionar" data-preco='0.5' data-codigoproduto="2">Adicionar no Carrinho</button>
+                </div>
+            </div>
+            <div class="home-card-produtos">
+                <div class="home-produtos">
+                    <img src="img/pao7.png" class="home-imagem-produto" alt="imagem de pão"> 
+                    <div class="home-titulo">
+                        <h3 class="home-titulo-pao">Croissant</h3>
+                        <h3 class="home-titulo-preco">R$ 7,50</h3>
+                    </div>
+                    <div class="home-filtros">
+                        <p class="home-filtro-pao">Low Carb</p>
+                        <p class="home-filtro-pao">Artesanal</p>
+                    </div>
+                    <button class="home-btn-adicionar">Adicionar no Carrinho</button>
+                </div>
+            </div>
+            <div class="home-card-produtos">
+                <div class="home-produtos">
+                    <img src="img/pao8.png" class="home-imagem-produto" alt="imagem de pão"> 
+                    <div class="home-titulo">
+                        <h3 class="home-titulo-pao">Pão de Forma</h3>
+                        <h3 class="home-titulo-preco">R$ 17,50</h3>
+                    </div>
+                    <div class="home-filtros">
+                        <p class="home-filtro-pao">Caseiro</p>
+                        <p class="home-filtro-pao">Artesanal</p>
+                    </div>
+                    <button class="home-btn-adicionar">Adicionar no Carrinho</button>
+                </div>
+            </div>
+            <div class="home-card-produtos">
+                <div class="home-produtos">
+                    <img src="img/pao9.png" class="home-imagem-produto" alt="imagem de pão"> 
+                    <div class="home-titulo">
+                        <h3 class="home-titulo-pao">Pão de Mandioca</h3>
+                        <h3 class="home-titulo-preco">R$ 11,00</h3>
+                    </div>
+                    <div class="home-filtros">
+                        <p class="home-filtro-pao">Zero Lactose</p>
+                        <p class="home-filtro-pao">Caseiro</p>
+                    </div>
+                    <button class="home-btn-adicionar">Adicionar no Carrinho</button>
+                </div>
+            </div> -->
+        </div>
+    </nav>
+
+<footer>
+    <h6>Todos os direitos reservados</h6>
+</footer>
+    
+    
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            ensureAuthenticated();
+            updateAuthUI();
+            fetchProducts();
+            fetchPadeiroName();
+        });
+    </script>
+</body>
+</html>

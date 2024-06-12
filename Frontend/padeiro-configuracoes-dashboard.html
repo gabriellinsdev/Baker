@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>BAKER | Configurações - Alterar Dados</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<!--NavBar-->
+<header>
+    <nav class="navbar-main">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="logo Baker">
+        </div>
+
+        <div class="navbar-lista-sites">
+            <ul>
+                <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Entrar</a></button>
+            <button onclick="redirectPage('carrinho.html')"><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+        </div>
+
+        <div class="navbar-btn-menu-sanduiche">
+            <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche" alt="menu sanduiche"></button>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile">
+        <ul>
+            <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+            <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+            <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+            <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+        </ul>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Login</a></button>
+            <button class="navbar-login"><a href="carrinho.html">Carrinho</a></button>
+        </div>
+    </div>
+</header>
+
+<section class="conf-usuario">
+    <section class="conf-padeiro-links">
+        <div class="conf-avatar">
+            <img src="img/avatar.png" alt="icone perfil avatar">
+            <div class="conf-avatar-info">
+                <h3>Nome Padeiro</h3>
+                <button onclick="logout()">Sair</button>
+            </div>
+        </div>
+        <nav class="conf-usuario-nav">
+            <ul>
+                <li class="conf-link-icon">
+                    <img src="img/usuario.png" alt="icone de usuario">
+                    <a href="usuario-configuracoes-alterar.html" class="">Minha Conta</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/historico-pedido.png" alt="icone de usuario">
+                    <a href="usuario-configuracoes-historico.html" class="">Meus Pedidos</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <section class="dashboard">
+        <h3>Dashboard</h3>
+        <section class="dashboard-resultado">
+            <div class="dashboard-maisvendido">
+                <h4>Produtos Mais Vendidos</h4>
+                <p>Pão Francês</p>
+                <p>Pão de Cará</p>
+                <p>Pão de Leite</p>
+            </div>
+            <div class="dashboard-compradores">
+                <h4>Clientes Frequentes</h4>
+                <p>Fulano</p>
+                <p>Cicrano</p>
+                <p>Beltrano</p>
+            </div>
+        </section>
+        <section class="dashboard-compras30dias">
+            <h4>Quantidade de vendas nos últimos 30 dias</h4>
+            <div class="dashboard-compras30dias-info">
+                <div class="dashboard-compras30dias-info1">
+                    <p>32</p>
+                    <p>15</p>
+                    <p>6</p>
+                </div>
+                <div class="dashboard-compras30dias-info2">
+                    <p>Pão Francês</p>
+                    <p>Pão de Cará</p>
+                    <p>Pão de Leite</p>
+                </div> 
+            </div>    
+        </section>
+    </section>
+</section>
+
+<footer>
+    <h6>Todos os direitos reservados</h6>
+</footer>
+    
+    <script type="text/javascript" src='js/main.js'></script>
+    <script type="text/javascript" src='js/auth.js'></script>
+    <script type="text/javascript" src='js/bakerDashboard.js'></script>
+</body>
+</html>

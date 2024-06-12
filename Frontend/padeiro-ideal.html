@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>BAKER | Padeiro Ideal</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+<body>
+
+    <!--NavBar-->
+    <header>
+        <nav class="navbar-main">
+            <div class="navbar-logo">
+                <img src="img/logo.png" alt="logo Baker">
+            </div>
+
+            <div class="navbar-lista-sites">
+                <ul>
+                    <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                    <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros
+                            Próximos</a></li>
+                    <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro
+                            Ideal</a></li>
+                    <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html"
+                            class="navbar-link-pagina">Produtos do Padeiro</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-btns">
+                <button class="navbar-login"><a href="#">Entrar</a></button>
+                <button><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+            </div>
+
+            <div class="navbar-btn-menu-sanduiche">
+                <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche"
+                        alt="menu sanduiche"></button>
+            </div>
+        </nav>
+
+        <div class="navbar-mobile">
+            <ul>
+                <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+
+            <div class="navbar-btns">
+                <button class="navbar-login"><a href="#">Login</a></button>
+                <button class="navbar-login"><a href="#">Carrinho</a></button>
+            </div>
+        </div>
+    </header>
+
+    <!--Perguntas-->
+    <section class="padeiro_ideal-perguntas-main">
+        <div class="padeiro_ideal-perguntas">
+            <h4>Responda as questões abaixo para calcularmos o melhor padeiro próximo de seu CEP para você</h4>
+            <p>
+                <legend>Possui intolerância a glúten?</legend>
+                <input onclick="desabilitaAlimentoCaseiros()" type="radio" name="intolerancia-gluten" id="padeiro-ideal_gluten-sim">
+                <label for="padeiro-ideal_gluten-sim">Sim</label>
+
+                <input onclick="desabilitaAlimentoCaseiros()" type="radio" name="intolerancia-gluten" id="padeiro-ideal_gluten-nao">
+                <label for="padeiro-ideal_gluten-nao">Não</label>
+            </p>
+            <p>
+                <legend>Possui intolerância a lactose?</legend>
+                <input onclick="desabilitaAlimentoCaseiros()" type="radio" name="intolerancia-lactose" id="padeiro-ideal_lactose-sim">
+                <label for="padeiro-ideal_lactose-sim">Sim</label>
+
+                <input onclick="desabilitaAlimentoCaseiros()" type="radio" name="intolerancia-lactose" id="padeiro-ideal_lactose-nao">
+                <label for="padeiro-ideal_lactose-nao">Não</label>
+            </p>      
+            <p>
+                <legend>Está dentro de uma dieta low-carb?</legend>
+                <input onclick="desabilitaAlimentoCaseiros()" type="radio" name="low-carb" id="padeiro-ideal_lowcarb-sim">
+                <label for="padeiro-ideal_lowcarb-sim">Sim</label>
+
+                <input onclick="desabilitaAlimentoCaseiros()" type="radio" name="low-carb" id="padeiro-ideal_lowcarb-nao">
+                <label for="padeiro-ideal_lowcarb-nao">Não</label>
+            </p>
+            <p>
+                <legend>Não possui nenhuma restrição e está buscando por produtos caseiros?</legend>
+                <input onclick="desabilitaAlimentoRestrito()" type="checkbox" name="caseiros" id="padeiro-ideal_caseiro-sim">
+                <label for="padeiro-ideal_caseiro-sim">Sim</label>
+            </p>
+        </div>
+
+        <div class="line"></div>
+
+        <!--Inserir CEP-->
+        <nav class="padeiro_ideal-search">
+            <h4>Digite o seu CEP para localizar o seu Padeiro Ideal</h4>
+            <div class="padeiro_ideal-barra-pesquisa">
+                <form action="#" method="post">
+                    <p>
+                        <input class="padeiro_ideal-form" type="text" id="padeiro_ideal-search"
+                            name="buscar padeiro por cep" size="50" placeholder="Insira o seu CEP">
+                    </p>
+                </form>
+                <button onclick="buscarPadeiroIdeal()" class="btn-search"><img src="img/search-white.png"
+                        class="btn-search-img"></button>
+            </div>
+        </nav>
+
+        <!-- Resultado do Padeiro -->
+        <div class="padeiro_ideal-resultado">
+            <img src="img/logo-padeiro.png" alt="logo do padeiro" class="logo-padeiro">
+            <div class="padeiro_ideal-conteudo-padeiro">
+                <h3 id="padeiro">Padeiro</h3>
+                <p id="restricao">Artesanais</p>
+                <p id="restricaoExtra">Zero Gluten</p>
+                <p id="restricaoExtra1">Zero Lactose</p>
+                <p id="restricaoExtra2">Low Carb</p>
+                <button id="button" onclick="redirectWithUserCode(CD_PADEIRO,NM_PADEIRO)">Clique para ver os produtos desse padeiro</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h6>Todos os direitos reservados</h6>
+    </footer>
+
+
+    <script type="text/javascript" src='js/main.js'></script>
+    <script type="text/javascript" src='js/padeiro-ideal.js'></script>
+
+</body>
+
+</html>

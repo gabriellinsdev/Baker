@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>BAKER | Padeiros Próximos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB58e1LL9TzxjAB_4kF65TWdx1bYz4kIo4&callback=initMap"></script>
+
+<body>
+
+    <!--NavBar-->
+    <header>
+        <nav class="navbar-main">
+            <div class="navbar-logo">
+                <img src="img/logo.png" alt="logo Baker">
+            </div>
+
+            <div class="navbar-lista-sites">
+                <ul>
+                    <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                    <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros
+                            Próximos</a></li>
+                    <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro
+                            Ideal</a></li>
+                    <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html"
+                            class="navbar-link-pagina">Produtos do Padeiro</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-btns">
+                <button class="navbar-login"><a href="#">Entrar</a></button>
+                <button><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+            </div>
+
+            <div class="navbar-btn-menu-sanduiche">
+                <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche"
+                        alt="menu sanduiche"></button>
+            </div>
+        </nav>
+
+        <div class="navbar-mobile">
+            <ul>
+                <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="#" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+
+            <div class="navbar-btns">
+                <button class="navbar-login"><a href="#">Login</a></button>
+                <button class="navbar-login"><a href="#">Carrinho</a></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de pesquisa Search -->
+    <section class="padeiros_proximos-search">
+        <h4>Digite o seu CEP para localizar os três padeiros
+            mais próximos de sua residência</h4>
+        <div class="padeiros_proximos-barra-pesquisa">
+            <form action="#" method="post">
+                <p>
+                    <label for="padeiros_proximos-search"></label>
+                    <input class="padeiros_proximos-form" type="text" id="padeiros_proximos-search"
+                        name="buscar padeiro por cep" size="60" placeholder="Insira o seu CEP">
+                </p>
+            </form>
+            <button type="button" class="btn-search" onclick="buscarPadeirosProximos()"><img src="img/search-white.png"
+                    class="btn-search-img"></button>
+        </div>
+    </section>
+
+    <!--<div class="line"></div> -->
+
+    <section class="padeiros_proximos-main">
+        <section class="padeiros_proximos-mapa">
+            <div id="map"></div>
+        </section>
+        <section class="padeiros_proximos-tres-primeiros">
+            <div class="padeiros_proximos-divisao-tres-primeiros">
+                <div class="padeiros_proximos-resultado1">
+                    <img src="img/logo-padeiro.png" alt="logo do padeiro" class="logo-padeiro">
+                    <div class="padeiros_proximos-conteudo-padeiro">
+                        <h3 id="padeiro1">Padeiro</h3>
+                        <p id="restricao1">Artesanais</p>
+                        <p id="restricaoExtra1">Zero Gluten</p>
+                        <p id="restricaoExtra12">Zero Lactose</p>
+                        <p id="restricaoExtra13">Low Carb</p>
+                        <button id="button1" onclick="redirectWithUserCode(CD_PADEIRO1,NM_PADEIRO1)">Ver mais</button>
+                    </div>
+                </div>
+                <div class="padeiros_proximos-resultado2">
+                    <img src="img/logo-padeiro.png" alt="logo do padeiro" class="logo-padeiro">
+                    <div class="padeiros_proximos-conteudo-padeiro">
+                        <h3 id="padeiro2">Padeiro</h3>
+                        <p id="restricao2">Artesanais</p>
+                        <p id="restricaoExtra2">Zero Gluten</p>
+                        <p id="restricaoExtra22">Zero Lactose</p>
+                        <p id="restricaoExtra23">Low Carb</p>
+                        <button id="button2" onclick="redirectWithUserCode(CD_PADEIRO2,NM_PADEIRO2)">Ver mais</button>
+                    </div>
+                </div>
+                <div class="padeiros_proximos-resultado3">
+                    <img src="img/logo-padeiro.png" alt="logo do padeiro" class="logo-padeiro">
+                    <div class="padeiros_proximos-conteudo-padeiro">
+                        <h3 id="padeiro3">Padeiro</h3>
+                        <p id="restricao3">Artesanais</p>
+                        <p id="restricaoExtra3">Zero Gluten</p>
+                        <p id="restricaoExtra32">Zero Lactose</p>
+                        <p id="restricaoExtra33">Low Carb</p>
+                        <button id="button3" onclick="redirectWithUserCode(CD_PADEIRO3,NM_PADEIRO3)">Ver mais</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <h6>Todos os direitos reservados</h6>
+    </footer>
+
+    
+    <script type="text/javascript" src='js/main.js'></script>
+    <script type="text/javascript" src='js/padeiros-proximos.js'></script>
+    
+</body>
+
+</html>

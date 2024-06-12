@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>BAKER | Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<section class="login-main-form">
+    <div class="login-header">
+        <button class="btn-login-voltar"><a href="index.html"><img src="img/voltar.png" alt="botao voltar"></a></button>
+        <h3>Fazer Login</h3>
+    </div>
+    
+    <div class="login-formulario">
+        <form>
+            <label for="usuario-login">Usuário</label><br>
+            <input type="text" id="usuario" name="usuario-log" class="login-form"><br>
+    
+            <label for="usuario-senha">Senha</label><br>
+            <input type="password" id="senha" name="usuario-sen" class="login-form"><br>
+            
+            <button class="btn-login">Entrar</button>
+            <p class="login-chamada-cadastrar">Ainda não possui uma conta? <a href="cadastrese.html">Cadastre-se</a></p>
+        </form>
+    </div>
+</section>
+    
+<script type="text/javascript" src='js/main.js'></script>
+<script src="js/auth.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setupLoginForm();  
+    });
+</script>
+</body>
+</html>

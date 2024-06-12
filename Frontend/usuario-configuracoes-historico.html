@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>BAKER | Configurações - Histórico de Pedidos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<body>
+
+<!--NavBar-->
+<header>
+    <nav class="navbar-main">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="logo Baker">
+        </div>
+
+        <div class="navbar-lista-sites">
+            <ul>
+                <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+                <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+                <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+                <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Entrar</a></button>
+            <button onclick="redirectPage('carrinho.html')"><img src="img/carrinho.png" alt="carrinho de compras" class="navbar-carrinho"></button>
+        </div>
+
+        <div class="navbar-btn-menu-sanduiche">
+            <button onclick="menuShow()"><img src="img/menu-sanduiche.png" class="navbar-icone-menu-sanduiche" alt="menu sanduiche"></button>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile">
+        <ul>
+            <li class="navbar-link-titulo"><a href="index.html" class="navbar-link-pagina">Home</a></li>
+            <li class="navbar-link-titulo"><a href="padeiros-proximos.html" class="navbar-link-pagina">Padeiros Próximos</a></li>
+            <li class="navbar-link-titulo"><a href="padeiro-ideal.html" class="navbar-link-pagina">Padeiro Ideal</a></li>
+            <li class="navbar-link-titulo"><a href="produtos-do-padeiro1.html" class="navbar-link-pagina">Produtos do Padeiro</a></li>
+        </ul>
+
+        <div class="navbar-btns">
+            <button class="navbar-login login-btn"><a href="login.html">Login</a></button>
+            <button class="navbar-login"><a href="carrinho.html">Carrinho</a></button>
+        </div>
+    </div>
+</header>
+
+<section class="conf-usuario">
+    <section class="conf-usuario-links">
+        <div class="conf-avatar">
+            <img src="img/avatar.png" alt="icone perfil avatar">
+            <div class="conf-avatar-info">
+                <h3>Nome Usuário</h3>
+                <button onclick="logout()">Sair</button>
+            </div>
+        </div>
+        <nav class="conf-usuario-nav">
+            <ul>
+                <li class="conf-link-icon">
+                    <img src="img/usuario.png" alt="icone de usuario">
+                    <a href="usuario-configuracoes-alterar.html" class="">Minha Conta</a>
+                </li>
+                <li class="conf-link-icon">
+                    <img src="img/historico-pedido.png" alt="icone de usuario">
+                    <a href="usuario-configuracoes-historico.html" class="">Meus Pedidos</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <section class="conf-historico-pedidos">
+        <h3>Histórico de Pedidos</h3>
+        <div id="pedidos-container">
+            <!-- Os pedidos serão inseridos aqui dinamicamente -->
+        </div>
+        <div id="sem-pedidos" style="display: none; color: #494949">
+            <p>Sem pedidos</p>
+        </div>
+        <!-- <section class="conf-historico-pedidos-main">
+            <div class="conf-historico-pedidos-info">
+                <h4>ID do Pedido: XXXXXXXXX</h4>
+                <p>Data do Pedido: 00/00/00</p>
+                <p>
+                    Endereço: Rua das Flores.
+                    Nº 345.
+                    Complemento: APTO 23.
+                    Bairro: Orquídeas.
+                    Cidade: Olímpia.
+                    Estado: São Paulo.
+                    País: Brasil.
+                </p>
+            </div>
+            <div class="conf-historico-pedidos-valor">
+                <h4>Total R$ 00,00</h4>
+            </div>
+            <div class="conf-historico-pedidos-btn">
+                <button id="btn-conf-verpedido">Ver Pedido</button>
+            </div>
+        </section>
+        <div id="conf-historico-pedidos-itens" class="conf-historico-pedidos-mostrar">
+            <div class="line"></div>
+            <table class="conf-historico-pedidos-mostrando">
+                <thead>
+                    <tr>
+                        <th>Tipo do Item</th>
+                        <th>Quantidade</th>
+                        <th>Valor Unitário</th>
+                        <th>Valor Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pão de Mandioquinha</td>
+                        <td>3 unidades</td>
+                        <td>R$ 13,50</td>
+                        <td>R$ 40,50</td>
+                    </tr>
+                    <tr>
+                        <td>Pão Francês</td>
+                        <td>8 unidades</td>
+                        <td>R$ 0,50</td>
+                        <td>R$ 4,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="line"></div>
+        <section class="conf-historico-pedidos-main">
+            <div class="conf-historico-pedidos-info">
+                <h4>ID do Pedido: XXXXXXXXX</h4>
+                <p>Data do Pedido: 00/00/00</p>
+                <p>
+                    Endereço: Rua das Flores.
+                    Nº 345.
+                    Complemento: APTO 23.
+                    Bairro: Orquídeas.
+                    Cidade: Olímpia.
+                    Estado: São Paulo.
+                    País: Brasil.
+                </p>
+            </div>
+            <div class="conf-historico-pedidos-valor">
+                <h4>Total R$ 00,00</h4>
+            </div>
+            <div class="conf-historico-pedidos-btn">
+                <button id="btn-conf-verpedido2">Ver Pedido</button>
+            </div>
+            <div class="line"></div>
+        </section>
+        <div id="conf-historico-pedidos-itens2" class="conf-historico-pedidos-mostrar">
+            <div class="line"></div>
+            <table class="conf-historico-pedidos-mostrando">
+                <thead>
+                    <tr>
+                        <th>Tipo do Item</th>
+                        <th>Quantidade</th>
+                        <th>Valor Unitário</th>
+                        <th>Valor Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pão de Mandioquinha</td>
+                        <td>3 unidades</td>
+                        <td>R$ 13,50</td>
+                        <td>R$ 40,50</td>
+                    </tr>
+                    <tr>
+                        <td>Pão Francês</td>
+                        <td>8 unidades</td>
+                        <td>R$ 0,50</td>
+                        <td>R$ 4,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+    </section>
+</section>
+
+<footer>
+    <h6>Todos os direitos reservados</h6>
+</footer>
+    
+    <script type="text/javascript" src='js/main.js'></script>
+    <script src="js/auth.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+</html>
