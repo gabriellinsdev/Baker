@@ -1,5 +1,5 @@
 // Guid selecionado do banco de dados
-//const CD_USUARIO = '3E918766-A22F-4DEB-9E7C-A70C829AA6F3'; 
+const CD_USUARIO = '3E918766-A22F-4DEB-9E7C-A70C829AA6F3'; 
 
 function fetchProducts() {
     fetch(`${BASE_URL_API2}/Produtos/List?CD_USUARIO=${CD_USUARIO}`)

@@ -274,6 +274,7 @@ BEGIN
 		FROM	dbo.TBL_PRODUTOS P WITH (NOLOCK)
 				INNER JOIN dbo.TBL_PRODUTOS_ALIMENTOS_RESTRITOS PA WITH (NOLOCK) 
 				ON P.CD_PRODUTO = PA.CD_PRODUTO
+        WHERE   P.BO_CANCELADO = 0
 		GROUP BY
 				P.CD_USUARIO, P.CD_PRODUTO  
     )
@@ -292,10 +293,12 @@ BEGIN
                                                             INNER JOIN dbo.TBL_ALIMENTOS_RESTRITOS AS AR ON PA_INNER.CD_ALIMENTO_RESTRITO = AR.CD_ALIMENTO_RESTRITO
 
                                                     WHERE   PD_INNER.CD_USUARIO = PD.CD_USUARIO
+                                                    AND     PD_INNER.BO_CANCELADO = 0
                                                     FOR XML PATH('ITEM'), ROOT('ALIMENTOSRESTRITOS'), TYPE
 									             )
 		FROM 
 			dbo.TBL_PRODUTOS AS PD
+        WHERE   PD.BO_CANCELADO = 0
 		GROUP BY 
 			PD.CD_USUARIO
 	)  
@@ -371,12 +374,15 @@ BEGIN
                                                             INNER JOIN dbo.TBL_ALIMENTOS_RESTRITOS AS AR ON PA_INNER.CD_ALIMENTO_RESTRITO = AR.CD_ALIMENTO_RESTRITO
 
                                                     WHERE   PD_INNER.CD_USUARIO = PD.CD_USUARIO
+                                                    AND		PD_INNER.BO_CANCELADO = 0
                                                     FOR XML PATH('ITEM'), ROOT('ALIMENTOSRESTRITOS'), TYPE
 									             )
 		FROM    dbo.TBL_PRODUTOS AS PD
 
                 INNER JOIN dbo.TBL_PRODUTOS_ALIMENTOS_RESTRITOS   PA  WITH (NOLOCK)
                 ON PA.CD_PRODUTO = PD.CD_PRODUTO
+
+       WHERE   PD.BO_CANCELADO = 0
 
 		GROUP BY 
 			    PD.CD_USUARIO
@@ -417,6 +423,7 @@ BEGIN
                         ON PA.CD_PRODUTO = PD.CD_PRODUTO
                 WHERE   PA.CD_ALIMENTO_RESTRITO IN (SELECT CD_ALIMENTO_RESTRITO FROM RESTRITOS)
                 AND     PD.CD_USUARIO = US.CD_USUARIO
+                AND		PD.BO_CANCELADO = 0
             ) CL
 
 
@@ -466,6 +473,7 @@ BEGIN
 
         INNER JOIN dbo.TBL_PRODUTOS         PR  WITH (NOLOCK)
         ON  IT.CD_PRODUTO = PR.CD_PRODUTO
+        AND		PR.BO_CANCELADO = 0
 
         INNER JOIN dbo.TBL_USUARIOS         US  WITH (NOLOCK)
         ON  PE.CD_CLIENTE = US.CD_USUARIO
@@ -494,6 +502,7 @@ BEGIN
 
                     INNER JOIN dbo.TBL_PRODUTOS         R  WITH (NOLOCK)
                     ON  I.CD_PRODUTO = R.CD_PRODUTO
+                    AND		R.BO_CANCELADO = 0
             WHERE
                     P.CD_PEDIDO = PE.CD_PEDIDO
             GROUP BY
@@ -589,6 +598,7 @@ BEGIN
 
              INNER JOIN dbo.TBL_PRODUTOS  PR  WITH (NOLOCK)
              ON  IT.CD_PRODUTO = PR.CD_PRODUTO
+             AND		PR.BO_CANCELADO = 0
 
     WHERE   CA.CD_USUARIO = @CD_USUARIO
 END
