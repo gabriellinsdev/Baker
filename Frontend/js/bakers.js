@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetchPadeirosByCity('guarujá');
-    fetchPadeirosByCity('santos');
+    fetchPadeiros();
 
     document.querySelector('.btn-search').addEventListener('click', searchPadeiroByName);
     document.querySelector('.produtos_do_padeiro-filtro-lactose').addEventListener('click', () => toggleFilter('Zero Lactose'));
@@ -12,21 +11,27 @@ document.addEventListener('DOMContentLoaded', function() {
 let allPadeiros = [];
 let currentFilter = null;
 
-function fetchPadeirosByCity(city) {
-    fetch(`${BASE_URL_API2}/Padeiros/ListLocation?NM_CIDADE=${city}`)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-        if (data.data != null) {
-            allPadeiros = allPadeiros.concat(data.data);
-            populatePadeiroList(allPadeiros);
-        } else {
-            console.error(`No bakers found in ${city}`);
-        }
-    })
-    .catch(error => {
-        console.error('There has been a problem with your fetch operation:', error);
-    });
+function fetchPadeiros(codigoAlimentoRestrito = null) {
+    let xmlString = null;
+
+    if (codigoAlimentoRestrito !== null) {
+        xmlString = `<ALIMENTOSRESTRITOS><ITEM><CD_ALIMENTO_RESTRITO>${codigoAlimentoRestrito}</CD_ALIMENTO_RESTRITO></ITEM></ALIMENTOSRESTRITOS>`;
+    }
+
+    fetch(`${BASE_URL_API2}/Padeiros/ListLocation?LS_ALIMENTOS_RESTRITOS_PADEIRO=${xmlString}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.data !== null) {
+                // Redefine a lista de padeiros antes de adicionar os novos
+                allPadeiros = data.data;
+                populatePadeiroList(allPadeiros);
+            } else {
+                console.error('Nenhum padeiro encontrado.');
+            }
+        })
+        .catch(error => {
+            console.error('Houve um problema com a operação fetch:', error);
+        });
 }
 
 function populatePadeiroList(padeiros) {
@@ -34,7 +39,6 @@ function populatePadeiroList(padeiros) {
     resultContainer.innerHTML = ''; // Limpar a lista antes de adicionar novos padeiros
 
     padeiros.forEach(padeiro => {
-        console.log(padeiros)
         const padeiroElement = document.createElement('div');
         padeiroElement.className = 'produtos_do_padeiro-resultado-padeiro';
         const nomePadeiro = padeiro.nM_USUARIO.split(' ')[0];
@@ -97,10 +101,22 @@ function filterPadeiros(filter) {
     populatePadeiroList(filteredPadeiros);
 }
 
-window.fetchPadeirosByCity = fetchPadeirosByCity;
+function parseEspecialidades(xmlString) {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+    const items = xmlDoc.getElementsByTagName("ITEM");
+    let especialidades = [];
+    for (let item of items) {
+        let especialidade = item.getElementsByTagName("DS_ALIMENTO")[0].textContent;
+        especialidades.push(especialidade);
+    }
+    return especialidades;
+}
+
+window.fetchPadeiros = fetchPadeiros;
 window.populatePadeiroList = populatePadeiroList;
 window.viewPadeiroProducts = viewPadeiroProducts;
 window.searchPadeiroByName = searchPadeiroByName;
 window.toggleFilter = toggleFilter;
 window.filterPadeiros = filterPadeiros;
-window.parseEspecialidades = parseEspecialidades;
+window.parseAlimentosRestritos = parseAlimentosRestritos;

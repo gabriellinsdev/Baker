@@ -10,13 +10,14 @@ namespace Baker_API.Controllers
     public class PadeirosController : Controller
     {
         [HttpGet("ListLocation")]
-        public IActionResult ListLocation(string NM_CIDADE, string? LS_ALIMENTOS_RESTRITOS_PADEIRO = null)
+        public IActionResult ListLocation(string? NM_CIDADE = null, string? LS_ALIMENTOS_RESTRITOS_PADEIRO = null)
         {
             Padeiros padeiro = new Padeiros();
             RetornoView retorno = new RetornoView();
 
             try
             {
+                LS_ALIMENTOS_RESTRITOS_PADEIRO = (LS_ALIMENTOS_RESTRITOS_PADEIRO == "null" ? null : LS_ALIMENTOS_RESTRITOS_PADEIRO);
                 retorno.Data = padeiro.ListarPadeiros(NM_CIDADE, LS_ALIMENTOS_RESTRITOS_PADEIRO);
 
                 if (retorno.Data == null)

@@ -7,7 +7,7 @@ namespace Baker_API.Repository
 
         const string dbName = "DB_BAKER";
 
-        public List<PadeiroModel> List(string NM_CIDADE, string? LS_ALIMENTOS_RESTRITOS = null)
+        public List<PadeiroModel> List(string? NM_CIDADE, string? LS_ALIMENTOS_RESTRITOS = null)
         {
             Helper helper = new Helper();
             return helper.ExecuteList<PadeiroModel>(dbName, "dbo.spLSTLocalizacaoPadeiros", new

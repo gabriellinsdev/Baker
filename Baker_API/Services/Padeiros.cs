@@ -6,7 +6,7 @@ namespace Baker_API.Services
 {
     public class Padeiros : IPadeiros
     {
-        public List<PadeiroView> ListarPadeiros(string NM_CIDADE, string? LS_ALIMENTOS_RESTRITOS = null)
+        public List<PadeiroView> ListarPadeiros(string? NM_CIDADE, string? LS_ALIMENTOS_RESTRITOS = null)
         {
             try
             {
