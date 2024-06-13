@@ -7,6 +7,35 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+
+    <style>
+        #produto-imagem {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+    
+    label[for="produto-imagem"] {
+        display: inline-block;
+        padding: 10px 20px;
+        border: #ba6d41 2px solid;
+        color: #ba6d41;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s;
+    }
+    
+    label[for="produto-imagem"]:hover {
+        background-color: #945734;
+        color: #fff;
+    }
+    </style>
+
 <body>
 
 <!--NavBar-->
@@ -63,13 +92,13 @@
             <ul>
                 <li class="conf-link-icon">
                     <img src="img/usuario.png" alt="icone de usuario">
-                    <a href="usuario-configuracoes-alterar.html" class="">Minha Conta</a>
+                    <a href="padeiro-configuracoes-alterar.html" class="">Minha Conta</a>
                 </li>
                 <li class="conf-link-icon">
                     <img src="img/historico-pedido.png" alt="icone de usuario">
-                    <a href="usuario-configuracoes-historico.html" class="">Meus Pedidos</a>
+                    <a href="padeiro-configuracoes-historico.html" class="">Meus Pedidos</a>
                 </li>
-                <!-- <li class="conf-link-icon">
+                <li class="conf-link-icon">
                     <img src="img/cadastrar-produto.png" alt="icone de usuario">
                     <a href="padeiro-configuracoes-gerenciar-produtos.html" class="">Gerenciar Produtos</a>
                 </li>
@@ -80,10 +109,11 @@
                 <li class="conf-link-icon">
                     <img src="img/dashboard.png" alt="icone de usuario">
                     <a href="padeiro-configuracoes-dashboard.html" class="">Dashboard</a>
-                </li> -->
+                </li>
             </ul>
         </nav>
     </section>
+
     <section class="conf-padeiro-cadastrar-produto-main">
         <div class="conf-padeiro-cadastro-header">
             <button class="btn-conf-padeiro-cadastro"><a href="padeiro-configuracoes-gerenciar-produtos.html"><img src="img/voltar.png" alt="botao voltar"></a></button>
@@ -112,7 +142,8 @@
                 <input type="checkbox" id="artesanal" name="categoria" value="4">
                 <label for="artesanal">Artesanal</label><br><br>
 
-                <input type="file" id="produto-imagem" name="produto-imagem" accept="image/*"><br><br>
+                <label for="produto-imagem">Imagem do produto</label><br>
+                <input type="file" id="produto-imagem" name="produto-imagem" accept="image/*" required><br>
                 
                 <button onclick="alterarProdutoPadeiro()" class="conf-padeiro-btncadastrar-produto-form">Alterar Produto</button>
             </form>

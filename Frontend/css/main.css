@@ -245,33 +245,36 @@ header{
 
 /* HOME - Galeria de Produtos */
 
-.galeria{
+.galeria {
     margin: 0 0 0px 0;
     padding: 30px 0 40px 0;
     background-color: #f8b95a;
     border-top: 2px solid #d69f4d;
+    position: relative; /* Adicionado para permitir o posicionamento absoluto das setas */
 }
 
-.home-galeria-titulo{
+.home-galeria-titulo {
     text-align: center;
     background-color: #ba6d41;
     width: 28%;
     border-radius: 30px;
+    margin: 0 auto; /* Centraliza o título */
 }
 
-.home-galeria{
+.home-galeria {
     padding: 0 7vw 0 7vw;
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
     height: auto;
+    position: relative; /* Adicionado para permitir o posicionamento absoluto das setas */
 }
 
-.home-galeria::-webkit-scrollbar{
+.home-galeria::-webkit-scrollbar {
     display: none;
 }
 
-.home-card-produtos{
+.home-card-produtos {
     flex: 0 0 auto;
     width: 300px;
     height: auto;
@@ -279,39 +282,39 @@ header{
     margin-top: 30px;
 }
 
-.home-produtos{
+.home-produtos {
     background-color: #e4d9cc;
     border-radius: 30px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.home-imagem-produto{
+.home-imagem-produto {
     width: 100%;
     height: auto;
     border-radius: 25px 25px 0 0;
 }
 
-.home-titulo{
+.home-titulo {
     display: flex;
     padding: 15px;
     color: #945734;
 }
 
-.home-titulo-pao{
+.home-titulo-pao {
     flex: 2;
 }
 
-.home-titulo-preco{
+.home-titulo-preco {
     flex: 1;
     text-align: right;
 }
 
-.home-filtros{
+.home-filtros {
     display: flex;
     margin-bottom: 15px;
 }
 
-.home-filtro-pao{
+.home-filtro-pao {
     margin: 0 15px 0 15px;
     padding: 5px;
     border-radius: 15px;
@@ -322,11 +325,11 @@ header{
     flex: 2;
 }
 
-.home-filtro-pao:last-child{
+.home-filtro-pao:last-child {
     margin-left: 3px;
 }
 
-.home-btn-adicionar{
+.home-btn-adicionar {
     padding: 10px;
     width: 100%;
     border: none;
@@ -338,32 +341,38 @@ header{
     font-weight: 600;
 }
 
-.home-btn-adicionar:hover{
+.home-btn-adicionar:hover {
     background-color: #945734;
     transition: 0.3s;
     color: #fff;
 }
 
-.nxt-btn, .pre-btn{
+.nxt-btn, .pre-btn {
     border: none;
-    max-width: 5%;
-    height: auto;
+    width: 40px;
+    height: 40px;
     position: absolute;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ba6d41;
     cursor: pointer;
-    max-width: 1367px;
-    border-radius: 100%;
-    margin-top: 20%;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
     box-shadow: 5px 5px 5px rgba(82, 48, 28, 0.6);
+    z-index: 10; /* Garante que os botões fiquem sobrepostos aos produtos */
 }
 
-.nxt-btn{
-    right: 0;
+.nxt-btn {
+    right: 10px;
 }
 
-.nxt-btn:hover, .pre-btn:hover{
+.pre-btn {
+    left: 10px;
+}
+
+.nxt-btn:hover, .pre-btn:hover {
     background-color: #e4d9cc;
     box-shadow: 5px 5px 5px rgba(140, 133, 125, 0.6);
 }
@@ -1950,6 +1959,66 @@ header{
         width: 100%;
         height: auto;
         font-size: 0.7em;
+    }
+
+    .home-galeria-titulo {
+        width: 70%;
+    }
+
+    .nxt-btn, .pre-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .nxt-btn {
+        right: 5px;
+    }
+
+    .pre-btn {
+        left: 5px;
+    }
+
+    .home-especialidades-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-img-card {
+        width: 100%;
+    }
+
+    .card1, .card2, .card3, .card4 {
+        width: 30%;
+        margin: 10px 0;
+        height: auto;
+        padding: 10px;
+    }
+
+    .home-servicos-titulo {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .home-servicos {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .home-localizar-padeiro, .home-indicar-padeiro {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .home-indicar-padeiro {
+        margin-left: 0;
+    }
+
+    .home-img-servicos {
+        width: 50%;
+        float: none;
+        margin: 10px 0 10px 0;
+        margin-bottom: 20px;
     }
 }
 

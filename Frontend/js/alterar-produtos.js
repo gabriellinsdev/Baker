@@ -100,6 +100,7 @@ function alterarProdutoPadeiro() {
 
     // Adicionar o XML das categorias ao formData
     formData.append('lS_ALIMENTOS_RESTRITOS_PRODUTO', categoriasXML);
+    console.log(BASE_URL_API2)
 
 
     fetch(`${BASE_URL_API2}/Produtos/Update`, {

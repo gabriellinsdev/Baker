@@ -6,7 +6,33 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+    #produto-imagem {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
 
+label[for="produto-imagem"] {
+    display: inline-block;
+    padding: 10px 20px;
+    border: #ba6d41 2px solid;
+    color: #ba6d41;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+label[for="produto-imagem"]:hover {
+    background-color: #945734;
+    color: #fff;
+}
+</style>
 <body>
 
 <!--NavBar-->
@@ -63,13 +89,13 @@
             <ul>
                 <li class="conf-link-icon">
                     <img src="img/usuario.png" alt="icone de usuario">
-                    <a href="usuario-configuracoes-alterar.html" class="">Minha Conta</a>
+                    <a href="padeiro-configuracoes-alterar.html" class="">Minha Conta</a>
                 </li>
                 <li class="conf-link-icon">
                     <img src="img/historico-pedido.png" alt="icone de usuario">
-                    <a href="usuario-configuracoes-historico.html" class="">Meus Pedidos</a>
+                    <a href="padeiro-configuracoes-historico.html" class="">Meus Pedidos</a>
                 </li>
-                <!-- <li class="conf-link-icon">
+                <li class="conf-link-icon">
                     <img src="img/cadastrar-produto.png" alt="icone de usuario">
                     <a href="padeiro-configuracoes-gerenciar-produtos.html" class="">Gerenciar Produtos</a>
                 </li>
@@ -80,11 +106,11 @@
                 <li class="conf-link-icon">
                     <img src="img/dashboard.png" alt="icone de usuario">
                     <a href="padeiro-configuracoes-dashboard.html" class="">Dashboard</a>
-                </li> -->
+                </li>
             </ul>
         </nav>
     </section>
-
+    
     <section class="conf-padeiro-cadastrar-produto-main">
         <div class="conf-padeiro-cadastro-header">
             <button class="btn-conf-padeiro-cadastro"><a href="padeiro-configuracoes-gerenciar-produtos.html"><img src="img/voltar.png" alt="botao voltar"></a></button>
@@ -94,10 +120,10 @@
         <div class="conf-padeiro-cadastrar-formulario">
             <form id="formulario-cadastro" onsubmit= "return false">
                 <label for="nome-do-produto">Nome do Produto</label><br>
-                <input type="text" id="nome-do-produto" name="nome-produto" class="conf-padeiro-form-cadastrar" required><br><br>
+                <input type="text" id="nome-do-produto" name="nome-produto" class="conf-padeiro-form-cadastrar" placeholder="Pão de Leite" required><br><br>
 
                 <label for="preco-do-produto">Preço do Produto</label><br>
-                <input type="text" id="preco-do-produto" name="preco-produto" placeholder="R$" class="conf-padeiro-form-cadastrar" required><br><br>
+                <input type="text" id="preco-do-produto" name="preco-produto" class="conf-padeiro-form-cadastrar" placeholder="R$ 10,00" required><br><br>
 
                 <label for="especificacao-do-produto">Especificação do Produto</label><br>
                 <input type="checkbox" id="zeroGluten" name="categoria" value="1">
@@ -112,8 +138,8 @@
                 <input type="checkbox" id="artesanal" name="categoria" value="4">
                 <label for="artesanal">Artesanal</label><br><br>
 
-                <label for="produto-imagem">Imagem do Produto</label><br>
-                <input type="file" id="produto-imagem" name="produto-imagem" accept="image/*" required><br><br>
+                <label for="produto-imagem">Imagem do produto</label><br>
+                <input type="file" id="produto-imagem" name="produto-imagem" accept="image/*" required><br>
                 
                 <button onclick="validarFormulario()" class="conf-padeiro-btncadastrar-produto-form">Cadastrar Produto</button>
             </form>
@@ -121,22 +147,10 @@
        
     </section>
 </section>
-
-
-
-
     
 <script type="text/javascript" src='js/main.js'></script>
 <script type="text/javascript" src='js/auth.js'></script>
 <script type="text/javascript" src='js/cadastrar-produtos.js'></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    ensureAuthenticated();
-    updateAuthUI();
-    ChangeaddressUI()
-});
-</script>
     
 </body>
 </html>
