@@ -745,6 +745,14 @@ header{
 .produtos_do_padeiro-conteudo-padeiro {
     flex-grow: 1;
     margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.produtos_do_padeiro-conteudo-padeiro > * {
+    margin-left: 0;
+    align-self: flex-start;
 }
 
 .produtos_do_padeiro-conteudo-padeiro button a{
@@ -758,8 +766,6 @@ header{
     border-radius: 20px;
     padding: 5px;
     margin-right: 5px;
-    align-items: left;
-    font-weight: 300px;
 }
 
 .produtos_do_padeiro-conteudo-padeiro button{
@@ -774,6 +780,7 @@ header{
     background-color: #DDAB4D;
     font-weight: bold;
     color: #fff;
+    align-self: center;
 }
 
 .produtos_do_padeiro-conteudo-padeiro button:hover{

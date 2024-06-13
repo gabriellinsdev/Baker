@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function buscarVendasPorPadeiro(CD_PADEIRO) {
+    console.log(CD_PADEIRO)
     // Fazer a requisição para a API
     fetch(`${BASE_URL_API2}/Padeiros/SalesReport?CD_USUARIO=${CD_PADEIRO}`, {
         headers:{
@@ -30,6 +31,8 @@ function buscarVendasPorPadeiro(CD_PADEIRO) {
         var vendas = data.data;
         var mensagem = data.mensagem;
         var stacktrace = data.stacktrace;
+
+        console.log(vendas)
             
         // Verificar se os dados estão presentes e se há algum erro
         if (!vendas || mensagem || stacktrace) {

@@ -114,6 +114,5 @@ window.fetchPadeiros = fetchPadeiros;
 window.populatePadeiroList = populatePadeiroList;
 window.viewPadeiroProducts = viewPadeiroProducts;
 window.searchPadeiroByName = searchPadeiroByName;
-window.toggleFilter = toggleFilter;
 window.filterPadeiros = filterPadeiros;
 window.parseAlimentosRestritos = parseAlimentosRestritos;

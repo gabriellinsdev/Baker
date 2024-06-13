@@ -38,13 +38,10 @@ function preencherProdutoNaPagina(produto) {
         // Preenchendo os campos do formulário com os dados do produto
         const nomeProdutoInput = document.getElementById('nome-do-produto');
         const precoProdutoInput = document.getElementById('preco-do-produto');
-        const zeroGlutenCheckbox = document.getElementById('zeroGluten');
-        const zeroLactoseCheckbox = document.getElementById('zeroLactose');
-        const lowCarbCheckbox = document.getElementById('lowCarb');
-        const artesanalCheckbox = document.getElementById('artesanal');
+
 
         nomeProdutoInput.value = produto.nM_PRODUTO;
-        precoProdutoInput.value = produto.vL_PRECO;
+        precoProdutoInput.value = `R$ ${produto.vL_PRECO.toFixed(2)}`
 
         // Marcando os checkboxes de acordo com os alimentos restritos associados ao produto
         convertXMLToList(produto.lS_ALIMENTOS_RESTRITOS_PRODUTO);
